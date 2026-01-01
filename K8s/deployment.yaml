@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phase5-app
+  namespace: phase5
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: phase5-app
+  template:
+    metadata:
+      labels:
+        app: phase5-app
+    spec:
+      containers:
+      - name: phase5-container
+        image: devilmegan/phase4-app:latest
+        ports:
+        - containerPort: 5000
