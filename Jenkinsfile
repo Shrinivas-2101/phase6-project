@@ -48,8 +48,8 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh '''
-                kubectl apply -f k8s/deployment.yaml -n phase5
-                kubectl apply -f k8s/service.yaml -n phase5
+                kubectl apply -f K8s/deployment.yaml -n phase5
+                kubectl apply -f K8s/service.yaml -n phase5
                 kubectl rollout restart deployment phase5-app -n phase5
                 '''
             }
